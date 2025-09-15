@@ -1,0 +1,128 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enterprise AI Repository</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <style>
+    body { background: #f9f9f9; font-family: 'Roboto', sans-serif; color: #333; margin: 0; padding: 0; }
+    header { background: #00249C; color: #fff; padding: 20px 0; text-align: center; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); }
+    header h1 { margin: 0; font-size: 2.5em; }
+    main { padding: 20px; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; }
+    th { background-color: #00249C; color: #ffffff; text-transform: uppercase; letter-spacing: 0.03em; }
+    tr:nth-of-type(even) { background-color: #f3f3f3; }
+    tr:hover { background-color: #f1f1f1; }
+    a { color: #00249C; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 10px; font-size: 0.9em; color: #777; }
+    .form-section { margin-bottom: 20px; }
+    .form-section input[type="text"], .form-section input[type="email"] { padding: 8px; width: 300px; margin-right: 10px; }
+    .form-section button { padding: 8px 16px; }
+    .status-message { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>AI Coding Summary</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Dynamic Search Form -->
+      <div class="form-section">
+        <input type="text" id="search-input" placeholder="Search summaries (e.g., Python, Flask, etc.)">
+        <button id="search-btn">Search</button>
+      </div>
+
+      <!-- Repository Submission Form -->
+      <div class="form-section">
+        <input type="text" id="repo-input" placeholder="Enter repository URL">
+        <input type="email" id="email-input" placeholder="Enter your email">
+        <button id="submit-repo-btn">Submit Repository</button>
+        <span id="submission-status" class="status-message"></span>
+      </div>
+
+      <!-- Table with Static Example Rows -->
+      <table id="summaries-table">
+        <thead>
+          <tr>
+            <th>SUMMARY</th>
+            <th>REPOSITORY URL</th>
+            <th>LAST UPDATE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Implemented an AI-powered summarizer for code repositories.</td>
+            <td><a href="https://github.com/example/repo1" target="_blank">https://github.com/example/repo1</a></td>
+            <td>2025-09-01</td>
+          </tr>
+          <tr>
+            <td>Developed automation scripts to speed up VM provisioning in cloud.</td>
+            <td><a href="https://github.com/example/repo2" target="_blank">https://github.com/example/repo2</a></td>
+            <td>2025-09-05</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sample Project. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Include jQuery from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function debounce(func, wait) {
+      let timeout;
+      return function() {
+        const context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+      };
+    }
+
+    $(function() {
+      // Search filter
+      $('#search-input').on('input', debounce(function() {
+        const terms = $(this).val().toLowerCase().split(/[\s,]+/).filter(Boolean);
+        $('#summaries-table tbody tr').each(function() {
+          const text = $(this).text().toLowerCase();
+          const show = terms.length === 0 ? true : terms.some(t => text.includes(t));
+          $(this).toggle(show);
+        });
+      }, 300));
+
+      $('#search-btn').click(() => $('#search-input').trigger('input'));
+
+      // Repository submission mock
+      $('#submit-repo-btn').click(function() {
+        const repoUrl = $('#repo-input').val().trim();
+        const email = $('#email-input').val().trim();
+        const statusEl = $('#submission-status');
+
+        if (!repoUrl || !email) {
+          statusEl.text('Both fields are required.').css('color','red');
+          return;
+        }
+        if (!email.endsWith('@example.com')) {
+          statusEl.text('Email must end with @example.com').css('color','red');
+          return;
+        }
+
+        $('#repo-input, #email-input').val('');
+        statusEl.text('Submission successful (demo only).').css('color','green');
+      });
+    });
+  </script>
+</body>
+</html>
