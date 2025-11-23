@@ -75,7 +75,6 @@ Demonstrates skills in:
 - Applied AI/ML system design
 
 
-🧩 Architecture
 ## Architecture High-Level System Diagram
 
 ```mermaid
@@ -94,7 +93,7 @@ flowchart LR
 
 
 
-🔍 Retrieval & Summarization Pipeline
+## 🔍 Retrieval & Summarization Pipeline
 
 ```
 sequenceDiagram
@@ -139,7 +138,7 @@ Code-Summarize-RAG/
 ```
 
 
-🧠 Technical Highlights
+## 🧠 Technical Highlights
 1. Transformer Embeddings
 
   - Uses sentence-transformers/all-MiniLM-L6-v2
