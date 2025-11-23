@@ -76,7 +76,6 @@ Demonstrates skills in:
 
 
 🧩 Architecture
-High-Level System Diagram
 ## Architecture High-Level System Diagram
 
 ```mermaid
