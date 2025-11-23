@@ -89,36 +89,36 @@ flowchart LR
   H --> I[Final Combined Summary]
   I --> J[Store JSON]
   J --> K[Dashboard UI]
-```
+
 
 
 
 🔍 Retrieval & Summarization Pipeline
 
-```
-sequenceDiagram
-    participant U as User
-    participant S as Flask Server
-    participant W as Worker Thread
-    participant GH as GitHub API
-    participant E as Embedding Model
-    participant F as FAISS
-    participant O as OpenAI GPT-4o
 
-    U->>S: Submit repository URL
-    S->>W: Start async job
-    W->>GH: Fetch repo contents
-    GH-->>W: Code files returned
-    W->>E: Generate embeddings
-    W->>F: Build FAISS index
-    W->>F: Query for relevant snippets
-    F-->>W: Top-k code files
-    W->>O: Summarize files
-    O-->>W: File summaries
-    W->>O: Request final summary
-    O-->>W: Project-level summary
-    W->>S: Save results
-    S-->>U: View in dashboard
+sequenceDiagram
+  participant U as User
+  participant S as Flask Server
+  participant W as Worker Thread
+  participant GH as GitHub API
+  participant E as Embedding Model
+  participant F as FAISS
+  participant O as OpenAI GPT-4o
+
+  U->>S: Submit repository URL
+  S->>W: Start async job
+  W->>GH: Fetch repo contents
+  GH-->>W: Code files returned
+  W->>E: Generate embeddings
+  W->>F: Build FAISS index
+  W->>F: Query for relevant snippets
+  F-->>W: Top-k code files
+  W->>O: Summarize files
+  O-->>W: File summaries
+  W->>O: Request final summary
+  O-->>W: Project-level summary
+  W->>S: Save results
+  S-->>U: View in dashboard
 ```
 
 📁 Project Structure
