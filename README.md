@@ -173,3 +173,23 @@ Code-Summarize-RAG/
 - Clean minimal UI
 
 - AJAX updates for smooth interaction
+
+
+📦 Installation
+```
+git clone https://github.com/yourusername/Code-Summarize-RAG.git
+cd Code-Summarize-RAG
+pip install -r requirements.txt
+```
+
+▶️ Running the App
+```
+export OPENAI_API_KEY=your_key
+export processed_repos=/tmp
+python app.py
+```
+
+Open in browser:
+```
+http://localhost:5000
+```
