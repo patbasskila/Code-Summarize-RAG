@@ -140,39 +140,31 @@ Code-Summarize-RAG/
 🧠 Technical Highlights
 1. Transformer Embeddings
 
-- Uses sentence-transformers/all-MiniLM-L6-v2
-
-- Encodes files into 384-dimensional embeddings
+  - Uses sentence-transformers/all-MiniLM-L6-v2
+  - Encodes files into 384-dimensional embeddings
 
 2. FAISS Vector Search
 
-- L2 nearest-neighbor search
-
-- Efficient retrieval of relevant code files
+  - L2 nearest-neighbor search
+  - Efficient retrieval of relevant code files
 
 3. GPT-4o Summaries
 
-- File-level summaries
-
-- High-level overall summary
-
-- Consistent output via structured prompts
+  - File-level summaries
+  - High-level overall summary
+  - Consistent output via structured prompts
 
 4. Backend Engineering
 
-- Flask routing
-
-- Thread-based asynchronous workers
-
-- Input validation + duplicate detection
+  - Flask routing
+  - Thread-based asynchronous workers
+  - Input validation + duplicate detection
 
 5. Frontend Design
 
-- Searchable table of summaries
-
-- Clean minimal UI
-
-- AJAX updates for smooth interaction
+  - Searchable table of summaries
+  - Clean minimal UI
+  - AJAX updates for smooth interaction
 
 
 📦 Installation
