@@ -89,13 +89,13 @@ flowchart LR
   H --> I[Final Combined Summary]
   I --> J[Store JSON]
   J --> K[Dashboard UI]
-
+```
 
 
 
 🔍 Retrieval & Summarization Pipeline
 
-
+```mermaid
 sequenceDiagram
   participant U as User
   participant S as Flask Server
