@@ -72,4 +72,21 @@ Demonstrates skills in:
 
 - Web backend engineering 
 
-- Applied AI/ML system design 
+- Applied AI/ML system design
+
+
+🧩 Architecture
+High-Level System Diagram
+
+flowchart LR
+    A[User Submits GitHub URL] --> B[Flask Backend]
+    B --> C[Async Worker Thread]
+    C --> D[GitHub API<br/>Fetch Code]
+    D --> E[Embedding Model<br/>MiniLM-L6-v2]
+    E --> F[FAISS Vector Index]
+    F --> G[Retrieve Top-k Code Files]
+    G --> H[GPT-4o Summaries]
+    H --> I[Final Combined Summary]
+    I --> J[Store JSON]
+    J --> K[Dashboard UI]
+
