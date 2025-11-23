@@ -10,23 +10,23 @@ This project demonstrates full-stack AI engineering — combining NLP, vector se
 
 Code-Summarize-RAG is an end-to-end platform that: 
 
-Fetches and analyzes public GitHub repositories 
+- Fetches and analyzes public GitHub repositories 
 
-Extracts source code across multiple languages 
+- Extracts source code across multiple languages 
 
-Embeds code files using MiniLM-L6-v2 (Sentence Transformers) 
+- Embeds code files using MiniLM-L6-v2 (Sentence Transformers) 
 
-Builds a FAISS index for high-speed semantic retrieval 
+- Builds a FAISS index for high-speed semantic retrieval 
 
-Uses GPT-4o to generate: 
+- Uses GPT-4o to generate: 
 
-File-level summaries 
+  - File-level summaries 
 
-A combined high-level project summary 
+  - A combined high-level project summary 
 
-Stores processed results in /tmp/processed_repos.json 
+- Stores processed results in /tmp/processed_repos.json 
 
-Displays summaries in an interactive web dashboard 
+- Displays summaries in an interactive web dashboard 
 
  
 
@@ -34,42 +34,42 @@ Displays summaries in an interactive web dashboard
 
 Retrieval-Augmented Generation 
 
-Transformer-based embeddings 
+- Transformer-based embeddings 
 
-Semantic vector search (FAISS) 
+- Semantic vector search (FAISS) 
 
-Retrieval of most relevant files 
+- Retrieval of most relevant files 
 
-Context-optimized LLM summarization 
+- Context-optimized LLM summarization 
 
 AI Summaries 
 
-Concise 1–2 sentence file summaries 
+- Concise 1–2 sentence file summaries 
 
-2–3 sentence repository-level summary 
+- 2–3 sentence repository-level summary 
 
-Automatic detection of frameworks & technologies 
+- Automatic detection of frameworks & technologies 
 
 Full-Stack System 
 
-Flask backend with async job orchestration 
+- Flask backend with async job orchestration 
 
-Threaded workers for non-blocking processing 
+- Threaded workers for non-blocking processing 
 
-HTML/JS UI with searchable summaries 
+- HTML/JS UI with searchable summaries 
 
-Clean module separation for extensibility 
+- Clean module separation for extensibility 
 
 Academic + Professional Relevance 
 
 Demonstrates skills in: 
 
-Information retrieval 
+- Information retrieval 
 
-Modern NLP and embeddings 
+- Modern NLP and embeddings 
 
-Vector databases 
+- Vector databases 
 
-Web backend engineering 
+- Web backend engineering 
 
-Applied AI/ML system design 
+- Applied AI/ML system design 
