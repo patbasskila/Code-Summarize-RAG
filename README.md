@@ -89,11 +89,11 @@ flowchart LR
   H --> I[Final Combined Summary]
   I --> J[Store JSON]
   J --> K[Dashboard UI]
+```
 
 
 
-
-## 🔍 Retrieval & Summarization Pipeline
+🔍 Retrieval & Summarization Pipeline
 
 ```
 sequenceDiagram
@@ -138,7 +138,7 @@ Code-Summarize-RAG/
 ```
 
 
-## 🧠 Technical Highlights
+🧠 Technical Highlights
 1. Transformer Embeddings
 
   - Uses sentence-transformers/all-MiniLM-L6-v2
