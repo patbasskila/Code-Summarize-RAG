@@ -1,8 +1,8 @@
 Code-Summarize-RAG
 
-A Retrieval-Augmented Generation (RAG) system that automatically analyzes GitHub repositories, retrieves semantically relevant code files, and generates high-quality AI summaries using OpenAI models, FAISS vector search, and transformer-based embeddings.
+A Retrieval-Augmented Generation (RAG) system that automatically analyzes GitHub repositories, retrieves semantically relevant code, and generates high-quality AI summaries using OpenAI models, FAISS vector search, and transformer embeddings.
 
-This project showcases full-stack AI engineering — combining NLP, vector databases, backend systems, and applied ML — making it suitable for hiring teams and graduate admissions committees evaluating AI/ML competency.
+This project showcases full-stack AI engineering — combining NLP, vector search, backend systems, and applied ML — for both industry hiring teams and graduate admissions committees evaluating AI/ML competency.
 
 ✨ Overview
 
@@ -12,61 +12,59 @@ Fetches and analyzes public GitHub repositories
 
 Extracts source code across multiple languages
 
-Embeds files with MiniLM-L6-v2 (Sentence Transformers)
+Embeds code files using MiniLM-L6-v2 (Sentence Transformers)
 
 Builds a FAISS index for high-speed semantic retrieval
 
-Uses GPT-4o to produce:
+Uses GPT-4o to generate:
 
 File-level summaries
 
-A final high-level project summary
+A combined high-level project summary
 
 Stores processed results in /tmp/processed_repos.json
 
-Displays all summaries in a responsive dashboard UI
-
-This is a practical demonstration of RAG techniques applied to code intelligence, highlighting skills in modern AI system design.
+Displays summaries in an interactive web dashboard
 
 🚀 Key Features
-🔎 Retrieval-Augmented Generation (RAG)
+🔎 Retrieval-Augmented Generation
 
-Embeds all code files using transformer embeddings
+Transformer-based embeddings
 
-Uses FAISS for similarity search
+Semantic vector search (FAISS)
 
-Selects the most relevant files before summarization
+Retrieval of most relevant files
 
-Produces more accurate and context-aware summaries
+Context-optimized LLM summarization
 
-🧠 AI-Driven Summaries
+🧠 AI Summaries
 
-GPT-4o file summaries (1–2 sentences each)
+Concise 1–2 sentence file summaries
 
-GPT-4o repository-level summary (2–3 sentences)
+2–3 sentence repository-level summary
 
-Identifies technologies, frameworks, and structure
+Automatic detection of frameworks & technologies
 
 🖥 Full-Stack System
 
-Flask backend for job orchestration
+Flask backend with async job orchestration
 
-Threaded async processing
+Threaded workers for non-blocking processing
 
-HTML/JS UI with search + table view
+HTML/JS UI with searchable summaries
 
-Clean architecture ready for extension
+Clean module separation for extensibility
 
 🎓 Academic + Professional Relevance
 
-Demonstrates engineering capabilities across:
+Demonstrates skills in:
 
 Information retrieval
 
-Embedding models
+Modern NLP and embeddings
 
-Intelligent summarization
+Vector databases
 
-Cloud-aware backend design
+Web backend engineering
 
-Web application development
+Applied AI/ML system design
