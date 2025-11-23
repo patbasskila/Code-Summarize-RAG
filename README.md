@@ -77,7 +77,7 @@ Demonstrates skills in:
 
 🧩 Architecture
 High-Level System Diagram
-
+```
 flowchart LR
     A[User Submits GitHub URL] --> B[Flask Backend]
     B --> C[Async Worker Thread]
@@ -89,4 +89,4 @@ flowchart LR
     H --> I[Final Combined Summary]
     I --> J[Store JSON]
     J --> K[Dashboard UI]
-
+```
