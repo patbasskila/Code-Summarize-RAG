@@ -90,3 +90,86 @@ flowchart LR
     I --> J[Store JSON]
     J --> K[Dashboard UI]
 ```
+
+
+🔍 Retrieval & Summarization Pipeline
+
+```
+sequenceDiagram
+    participant U as User
+    participant S as Flask Server
+    participant W as Worker Thread
+    participant GH as GitHub API
+    participant E as Embedding Model
+    participant F as FAISS
+    participant O as OpenAI GPT-4o
+
+    U->>S: Submit repository URL
+    S->>W: Start async job
+    W->>GH: Fetch repo contents
+    GH-->>W: Code files returned
+    W->>E: Generate embeddings
+    W->>F: Build FAISS index
+    W->>F: Query for relevant snippets
+    F-->>W: Top-k code files
+    W->>O: Summarize files
+    O-->>W: File summaries
+    W->>O: Request final summary
+    O-->>W: Project-level summary
+    W->>S: Save results
+    S-->>U: View in dashboard
+```
+
+📁 Project Structure
+```
+Code-Summarize-RAG/
+│
+├── app.py                     # Flask backend + async job manager
+│
+├── Summarizer/
+│   └── summarizer.py          # Embeddings, FAISS, GPT summarization
+│
+├── templates/
+│   └── index.html             # Dashboard UI
+│
+├── requirements.txt
+└── README.md
+```
+
+
+🧠 Technical Highlights
+1. Transformer Embeddings
+
+- Uses sentence-transformers/all-MiniLM-L6-v2
+
+- Encodes files into 384-dimensional embeddings
+
+2. FAISS Vector Search
+
+- L2 nearest-neighbor search
+
+- Efficient retrieval of relevant code files
+
+3. GPT-4o Summaries
+
+- File-level summaries
+
+- High-level overall summary
+
+- Consistent output via structured prompts
+
+4. Backend Engineering
+
+- Flask routing
+
+- Thread-based asynchronous workers
+
+- Input validation + duplicate detection
+
+5. Frontend Design
+
+- Searchable table of summaries
+
+- Clean minimal UI
+
+- AJAX updates for smooth interaction
